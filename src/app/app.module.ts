@@ -1,5 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 /* import { PrimeNgModule } from './prime-ng/prime-ng.module'; */
@@ -20,6 +21,7 @@ registerLocaleData( localeFr ); //Con esto yo ya tengo registrado el español y 
   ],
   imports: [
     AppRouterModule,
+    BrowserAnimationsModule,
     BrowserModule,
     SharedModule,
     VentasModule

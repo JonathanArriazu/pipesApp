@@ -1,1 +1,99 @@
-<p>numeros works!</p>
+<div class="text-layout">
+    <h1>DecimalPipe, CurrencyPipe y Porcentaje</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="Ventas Netas"
+                subheader="del presente año">            
+            <p>Numero completo:</p>
+            <ul>
+                <li>
+                    ventasNetas | number
+                </li>
+                <li>
+                    <i class="pi pi-dollar"></i>
+                    {{ventasNetas | number}}
+                </li>
+            </ul>
+
+            <p>Trabajando con digitos: toda la parte entera y 2 decimales</p>
+            <ul>
+                <li>ventasNetas | number:"1.2-2"</li>
+                <li>
+                    <i class="pi pi-dollar"></i>
+                    {{ventasNetas | number:"1.2-2"}} 
+                </li>
+            </ul>
+            <!-- Si ponemos 1-2 va de 1 a 2 decimales, pero si ponemos 2-2 siempre son 2 decimales -->
+            <p>Sumandole un numero: en este caso 1000000</p>
+            <ul>
+                <li>ventasNetas + 1000000) | number:"1.2-2"</li>
+                <li>
+                    <i class="pi pi-dollar"></i>
+                    {{(ventasNetas + 1000000) | number:"1.2-2"}}
+                </li>
+            </ul>
+            
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card header="Ventas Brutas"
+                subheader="del presente año">            
+            <p>Usando solo | currency:</p>
+            <ul>
+                <li>
+                    ventasNetas | currency
+                </li>
+                <li>
+                    {{ventasNetas | currency}}
+                </li>
+            </ul>
+
+            <p>Colocando la moneda que yo quiero, como ser ARS:</p>
+            <ul>
+                <li>ventasNetas | currency:"ARS"</li>
+                <li>
+                    {{ventasNetas | currency:"ARS"}} 
+                </li>
+            </ul>
+            <!-- Si ponemos 1-2 va de 1 a 2 decimales, pero si ponemos 2-2 siempre son 2 decimales -->
+            <p>Colocando symbol correspondiente:</p>
+            <ul>
+                <li>ventasNetas | currency:"ARS": "symbol-narrow"</li>
+                <li>
+                    {{ventasNetas | currency:"ARS": "symbol-narrow"}}
+                </li>
+            </ul>
+            
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card header="Ganancia porcentual"
+                subheader="del presente año">            
+            <p>Porcentaje numero entero:</p>
+            <ul>
+                <li>
+                    porcentaje | percent
+                </li>
+                <li>
+                    {{porcentaje | percent}}
+                </li>
+            </ul>
+
+            <p>Porcentaje con decimales: 2 enteros y 2 decimales</p>
+            <ul>
+                <li>porcentaje | percent: "2.2-2"</li>
+                <li>
+                    {{porcentaje | percent: "2.2-2"}} 
+                </li>
+            </ul>
+            
+        </p-card>
+    </div>
+</div>
