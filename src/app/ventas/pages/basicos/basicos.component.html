@@ -1,1 +1,104 @@
-<p>basicos works!</p>
+<div class="text-layout">
+    <h1>Pipes Básicos</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+       <p-card 
+        header="uppercase"
+        [subheader]="nombreLower | uppercase"
+        >   
+            Asi lo recibo "{{ nombreLower }}", y esto obtengo "{{ nombreLower | uppercase }}"
+            <!-- {{ nombreLower | uppercase }} -->
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card 
+        header="lowercase"
+        [subheader]="nombreUpper | lowercase"
+        >
+            Asi lo recibo "{{ nombreUpper }}", y esto obtengo "{{ nombreUpper | lowercase }}"
+            <!-- {{ nombreUpper | lowercase }} -->
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card 
+        header="titlecase"
+        [subheader]="nombreCompleto | titlecase"
+        >
+            Asi lo recibo "{{ nombreCompleto }}", y esto es lo que obtengo "{{ nombreCompleto | titlecase }}"
+            <!-- {{ nombreCompleto | titlecase }} -->
+        </p-card>
+    </div>
+
+</div>
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe</h1>
+    <p>
+        Pipe para mostrar las fechas.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-6">
+       <p-card>
+            <p>Trabajando con el primer argumento:</p>
+            <ul>
+                <li>fecha</li>
+                <li>fecha | date</li>
+                <li>fecha | date:"short"</li>
+                <li>fecha | date:"long"</li>
+                <li>fecha | date: "MMMM"</li>
+                <li>fecha | date: "MMMM dd, yyyy"</li>
+            </ul> 
+
+            <hr>
+            <p>Trabajando con el segundo argumento:</p>
+            <ul>
+                <li>fecha | date:"long": "GMT-6"</li>
+            </ul>
+
+            <hr>
+            <p>Trabajando con el tercer argumento:</p>
+            <ul>
+                <li>fecha | date:"long": " ": "en"</li>
+                <li>fecha | date:"long": " ": "fr"</li>
+                <li>fecha | date:"long": " ": "es-AR"</li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-6">
+        <p-card>
+            <p>Trabajando con el primer argumento:</p>
+            <ul>
+                <li>{{fecha}}</li>
+                <li>{{fecha | date}}</li>
+                <li>{{fecha | date:"short"}}</li>
+                <li>{{fecha | date:"long"}}</li>
+                <li>{{fecha | date: "MMMM"}}</li>
+                <li>{{fecha | date: "MMMM dd, yyyy"}}</li>
+            </ul> 
+
+            <hr>
+            <p>Trabajando con el segundo argumento:</p>
+            <ul>
+                <li>{{fecha | date:"long": "GMT-6"}}</li>
+            </ul> 
+            
+            <hr>
+            <p>Trabajando con el tercer argumento:</p>
+            <ul>
+                <li>{{fecha | date:"long": " ": "en"}}</li>
+                <li>{{fecha | date:"long": " ": "fr"}}</li>
+                <li>{{fecha | date:"long": " ": "es-AR"}}</li>
+            </ul>
+         </p-card>
+     </div>
+</div>
